@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 
 	function task() {
 
-		var buildQuickSettings = ["minify", "sourceMaps"],
+		var buildQuickSettings = ["minify", "sourceMaps", "sourceMapContents"],
 			Builder = require("systemjs-builder"),
 			options = _getOptions.call(this, buildQuickSettings),
 			builder = new Builder(options.builder),
@@ -41,7 +41,8 @@ module.exports = function (grunt) {
 			build: {},
 			sfx: false,
 			minify: false,
-			sourceMaps: true
+			sourceMaps: true,
+			sourceMapContents: false
 		});
 
 		buildQuickSettings.forEach(function (setting) {  //make it easier to set build options
